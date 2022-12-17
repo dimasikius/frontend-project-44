@@ -22,7 +22,7 @@ export const brainProgressionResult = () => {
     const randomIndex = generateRandomNumber(0, progressionLength);
     const progressionAndAnswer = generateProgressionPlusAnswer(progressionLength, startNumber, step, randomIndex);
     const rightAnswer = String(progressionAndAnswer[0]);
-    const progression = progressionAndAnswer[1];
+    const progression = progressionAndAnswer[1].join(' ');
     console.log(`Question: ${progression}`);
     const userAnswer = getUserAnswer();
     return returnBool(userAnswer, rightAnswer);
