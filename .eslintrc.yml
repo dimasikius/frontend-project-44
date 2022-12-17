@@ -6,6 +6,8 @@ overrides: []
 parserOptions:
   ecmaVersion: latest
 rules: {
-  "no-console": "off"
-  "indent": ['error', 4]
+  "no-console": "off",
+  "indent": ['error', 4],
+  "import/extensions": "off",
+  "consistent-return": "off"
 }

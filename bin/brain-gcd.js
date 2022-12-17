@@ -3,26 +3,18 @@ import greeting from '../src/cli.js';
 
 const userName = greeting();
 
-export const getRightAnswerCalc = (firstNumber, sign, secondNumber) => {
-    let rightAnswer = 0;
-    if (sign === '+') {
-        rightAnswer += firstNumber + secondNumber;
+export const getRightAnswerGcd = (firstNumber, secondNumber) => {
+    if (!secondNumber) {
+        return String(firstNumber);
     }
-    if (sign === '-') {
-        rightAnswer += firstNumber - secondNumber;
-    }
-    if (sign === '*') {
-        rightAnswer += firstNumber * secondNumber;
-    }
-    return String(rightAnswer);
+    return String(getRightAnswerGcd(secondNumber, firstNumber % secondNumber));
 };
 
-export const brainCalcResult = () => {
+export const brainGcdResult = () => {
     const firstNumber = generateRandomNumber(1, 50);
     const secondNumber = generateRandomNumber(1, 50);
-    const sign = ['+', '-', '*'][generateRandomNumber(0, 3)];
-    const rightAnswer = getRightAnswerCalc(firstNumber, sign, secondNumber);
-    console.log(`Question: ${firstNumber} ${sign} ${secondNumber}`);
+    const rightAnswer = getRightAnswerGcd(firstNumber, secondNumber);
+    console.log(`Question: ${firstNumber} ${secondNumber}`);
     const userAnswer = getUserAnswer();
     if (userAnswer === rightAnswer) {
         console.log('Correct!');
@@ -34,10 +26,10 @@ export const brainCalcResult = () => {
     }
 };
 
-export const playCalc = (name) => {
-    console.log('What is the result of the expression?');
+export const playGcd = (name) => {
+    console.log('Find the greatest common divisor of given numbers.');
     for (let i = 0; i < 3; i += 1) {
-        if (!brainCalcResult()) {
+        if (!brainGcdResult()) {
             console.log(`Let's try again, ${name}!`);
             break;
         }
@@ -47,4 +39,4 @@ export const playCalc = (name) => {
     }
 };
 
-playCalc(userName);
+playGcd(userName);
