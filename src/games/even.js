@@ -4,9 +4,11 @@ import {
 import greeting from '../cli.js';
 
 export const getRightAnswerEven = (task) => {
+  let result = '';
   const taskIsEven = isEven(task);
-  if (taskIsEven) return 'yes';
-  if (!taskIsEven) return 'no';
+  if (taskIsEven) result += 'yes';
+  if (!taskIsEven) result += 'no';
+  return result;
 };
 
 export const brainEvenResult = () => {

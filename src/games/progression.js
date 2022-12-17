@@ -14,11 +14,11 @@ export const generateProgressionPlusAnswer = (progressionLength, startNumber, st
 };
 
 export const brainProgressionResult = () => {
-  const progressionLength = generateRandomNumber(5, 15);
-  const startNumber = generateRandomNumber(1, 15);
+  const progressLen = generateRandomNumber(5, 15);
+  const stNum = generateRandomNumber(1, 15);
   const step = generateRandomNumber(1, 10);
-  const randomIndex = generateRandomNumber(0, progressionLength);
-  const progressionAndAnswer = generateProgressionPlusAnswer(progressionLength, startNumber, step, randomIndex);
+  const randIdx = generateRandomNumber(0, progressLen);
+  const progressionAndAnswer = generateProgressionPlusAnswer(progressLen, stNum, step, randIdx);
   const rightAnswer = String(progressionAndAnswer[0]);
   const progression = progressionAndAnswer[1].join(' ');
   console.log(`Question: ${progression}`);

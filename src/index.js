@@ -11,17 +11,21 @@ export const getUserAnswer = () => {
 };
 
 export const isEven = (number) => {
-  if (number % 2 === 0) return true;
-  if (number % 2 !== 0) return false;
+  let result = 0;
+  if (number % 2 === 0) result += true;
+  if (number % 2 !== 0) result += false;
+  return result;
 };
 
 export const returnBool = (usersAnswer, rightAnswer) => {
+  let result = 0;
   if (usersAnswer === rightAnswer) {
     console.log('Correct!');
-    return true;
+    result += true;
   }
   if (usersAnswer !== rightAnswer) {
     console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-    return false;
+    result += false;
   }
+  return result;
 };
