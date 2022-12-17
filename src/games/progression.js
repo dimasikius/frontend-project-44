@@ -9,7 +9,7 @@ export const generateProgressionPlusAnswer = (progressionLength, startNumber, st
         startedNumber += step;
     }
     const rightAnswer = progression[randIndex];
-    progression[randIndex] = '...';
+    progression[randIndex] = '..';
     return [rightAnswer, progression];
 };
 
