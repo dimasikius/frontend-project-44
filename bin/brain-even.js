@@ -1,4 +1,6 @@
-import { generateRandomNumber, getUserAnswer, isEven } from '../src/index.js';
+import {
+    generateRandomNumber, getUserAnswer, isEven, returnBool,
+} from '../src/index.js';
 import greeting from '../src/cli.js';
 
 const userName = greeting();
@@ -14,14 +16,7 @@ export const brainEvenResult = () => {
     const rightAnswer = getRightAnswerEven(number);
     console.log(`Question: ${number}`);
     const userAnswer = getUserAnswer();
-    if (userAnswer === rightAnswer) {
-        console.log('Correct!');
-        return true;
-    }
-    if (userAnswer !== rightAnswer) {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-        return false;
-    }
+    return returnBool(userAnswer, rightAnswer);
 };
 
 export const playEven = (name) => {

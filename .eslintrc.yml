@@ -9,5 +9,6 @@ rules: {
   "no-console": "off",
   "indent": ['error', 4],
   "import/extensions": "off",
-  "consistent-return": "off"
+  "consistent-return": "off",
+  "max-len": "off"
 }

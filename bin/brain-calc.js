@@ -1,4 +1,4 @@
-import { generateRandomNumber, getUserAnswer } from '../src/index.js';
+import { generateRandomNumber, getUserAnswer, returnBool } from '../src/index.js';
 import greeting from '../src/cli.js';
 
 const userName = greeting();
@@ -24,14 +24,7 @@ export const brainCalcResult = () => {
     const rightAnswer = getRightAnswerCalc(firstNumber, sign, secondNumber);
     console.log(`Question: ${firstNumber} ${sign} ${secondNumber}`);
     const userAnswer = getUserAnswer();
-    if (userAnswer === rightAnswer) {
-        console.log('Correct!');
-        return true;
-    }
-    if (userAnswer !== rightAnswer) {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-        return false;
-    }
+    return returnBool(userAnswer, rightAnswer);
 };
 
 export const playCalc = (name) => {

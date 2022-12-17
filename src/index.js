@@ -14,3 +14,14 @@ export const isEven = (number) => {
     if (number % 2 === 0) return true;
     if (number % 2 !== 0) return false;
 };
+
+export const returnBool = (usersAnswer, rightAnswer) => {
+    if (usersAnswer === rightAnswer) {
+        console.log('Correct!');
+        return true;
+    }
+    if (usersAnswer !== rightAnswer) {
+        console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+        return false;
+    }
+};
