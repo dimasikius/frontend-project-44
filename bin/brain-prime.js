@@ -1,21 +1,19 @@
 import { generateRandomNumber, getUserAnswer, returnBool } from '../src/index.js';
 import greeting from '../src/cli.js';
-import { question } from 'readline-sync';
 
 const userName = greeting();
 
 export const getRightAnswerPrime = (number) => {
-    let result = ''
+    let result = '';
     let counter = 0;
     for (let i = 1; i <= number; i += 1) {
         if (number % i === 0) {
-            counter += 1
+            counter += 1;
         }
     }
     if (counter === 2) {
         result += 'yes';
-    }
-    else {
+    } else {
         result += 'no';
     }
     return result;
